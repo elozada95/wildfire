@@ -61,7 +61,7 @@ path = args["extractionPath"]
 #get files from path
 onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
 
-count = 0 #external path
+count = 35 #external path
 for fileName in onlyfiles:
 	if fileName != ".DS_Store":
 		count = count + 1
