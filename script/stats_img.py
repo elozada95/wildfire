@@ -133,7 +133,7 @@ def getStats(image, image_name, image_status):
         return data
 
 #currently hardcoded, should define path on cli
-mypath = "./test_img_out/"
+mypath = "../classifications/smoke/"
 #get files 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
@@ -141,13 +141,11 @@ for fileName in onlyfiles:
     if fileName != ".DS_Store":
         #obtain the name of the image and its status. Asuming the format of the filename to be "something_status.fileformat" 
         # where something is the name of the file
-        # status is the status of the image: fire/noFire/smoke
+        # status is the status of the image: fire/noFire/smoke
         # fileFormat is the file format...png, jpg, whatever
-        arrStr = fileName.split("_")
-        subImgName = arrStr[0]
-        status = arrStr[1].split(".")[0]
+        subImgName = fileName.split(".")[0]
         image = cv2.imread(mypath+fileName)
-        print(getStats(image,subImgName,status))
+        print(getStats(image,subImgName,"smoke"))
 
 
 
